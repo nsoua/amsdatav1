@@ -11,6 +11,7 @@
 	</parent>
 	<groupId>com.sip</groupId>
 	<artifactId>amsdata</artifactId>
+	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>amsdata</name>
 	<description>A simple MVC Spring Project Data</description>
@@ -38,21 +39,28 @@
 			<optional>true</optional>
 		</dependency>
 
-		<!-- <dependency> -->
-		<!-- <groupId>mysql</groupId> -->
-		<!-- <artifactId>mysql-connector-java</artifactId> -->
-		<!-- <scope>runtime</scope> -->
-		<!-- </dependency> -->
 		<dependency>
-			<groupId>org.postgresql</groupId>
-			<artifactId>postgresql</artifactId>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
 		</dependency>
 
+
+		<!-- <dependency> sur Heroku cloud -->
+		<!-- <groupId>org.postgresql</groupId> -->
+		<!-- <artifactId>postgresql</artifactId> -->
+		<!-- </dependency> -->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+
+		<dependency>  <!--sur un autre serveur Tomcat externe du déploiement -->
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
@@ -63,6 +71,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>amsv1</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
