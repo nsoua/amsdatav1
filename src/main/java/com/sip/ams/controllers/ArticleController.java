@@ -1,5 +1,11 @@
 package com.sip.ams.controllers;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -8,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 //import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,13 +28,6 @@ import com.sip.ams.entities.Article;
 import com.sip.ams.entities.Provider;
 import com.sip.ams.repositories.ArticleRepository;
 import com.sip.ams.repositories.ProviderRepository;
-
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 @Controller
 @RequestMapping("/article/")
@@ -114,7 +114,11 @@ public class ArticleController {
 				.orElseThrow(() -> new IllegalArgumentException("Invalid provider Id:" + id));
 
 		articleRepository.delete(artice);
-		model.addAttribute("articles", articleRepository.findAll());
+		
+		List<Article> la = (List<Article>) articleRepository.findAll();
+		if (la.size() == 0)
+			la = null;
+		model.addAttribute("articles", la);
 		return "article/listArticles";
 	}
 
