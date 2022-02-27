@@ -39,17 +39,21 @@
 			<optional>true</optional>
 		</dependency>
 
+
+<!-- 			sans Cloud -->
+
+<!-- 		<dependency> -->
+<!-- 			<groupId>mysql</groupId> -->
+<!-- 			<artifactId>mysql-connector-java</artifactId> -->
+<!-- 			<scope>runtime</scope> -->
+<!-- 		</dependency> -->
+
+
+		<!--sur Heroku cloud -->
 		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<scope>runtime</scope>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
 		</dependency>
-
-
-		<!-- <dependency> sur Heroku cloud -->
-		<!-- <groupId>org.postgresql</groupId> -->
-		<!-- <artifactId>postgresql</artifactId> -->
-		<!-- </dependency> -->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -71,16 +75,16 @@
 
 
 		<!-- https://mvnrepository.com/artifact/org.webjars.bower/jquery -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.webjars.bower</groupId> -->
-<!-- 			<artifactId>jquery</artifactId> -->
-<!-- 			<version>3.4.1</version> -->
-<!-- 		</dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>org.webjars.bower</groupId> -->
+		<!-- <artifactId>jquery</artifactId> -->
+		<!-- <version>3.4.1</version> -->
+		<!-- </dependency> -->
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.springframework</groupId> -->
-<!-- 			<artifactId>spring-context</artifactId> -->
-<!-- 		</dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>org.springframework</groupId> -->
+		<!-- <artifactId>spring-context</artifactId> -->
+		<!-- </dependency> -->
 
 
 	</dependencies>
